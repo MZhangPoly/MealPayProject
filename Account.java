@@ -13,7 +13,7 @@ public class Account {
         accountsCreated++;
     }
 
-    public void changeBalance(int change) {
+    public void changeBalance(double change) {
         balance += change;
     }
 

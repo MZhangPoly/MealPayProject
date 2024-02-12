@@ -47,6 +47,6 @@ public class AccountHandler {
     }
 
     public void applyTransactionToAccount(Transaction transaction, Account account) {
-        
+        account.changeBalance(transaction.getBalanceChange());
     }
 }
