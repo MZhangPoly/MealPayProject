@@ -46,4 +46,8 @@ public class AccountHandler {
         account.changeBalance(transaction.getBalanceChange());
         account.addTransactionToLog(transaction);
     }
+
+    public static void createTransaction(Account account, double balanceChange, Date date) {
+        Transaction transaction = new Transaction(account, balanceChange, date);
+    }
 }
