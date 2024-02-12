@@ -7,7 +7,7 @@ public class Account {
 
     private static int accountsCreated = 0;
 
-    private static ArrayList<Transaction> transactions;
+    private ArrayList<Transaction> transactions;
 
     public Account(String name) {
         this.name = name;
