@@ -13,12 +13,8 @@ public class Account {
         accountsCreated++;
     }
 
-    public void Deposit(int deposit) {
-        balance += deposit;
-    }  
-
-    public void Charge(int charge) {
-        balance -= charge;
+    public void changeBalance(int change) {
+        balance += change;
     }
 
     public int getId() {

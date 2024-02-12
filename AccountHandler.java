@@ -45,4 +45,8 @@ public class AccountHandler {
 
         return t;
     }
+
+    public void applyTransactionToAccount(Transaction transaction, Account account) {
+        
+    }
 }
