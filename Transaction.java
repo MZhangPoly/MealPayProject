@@ -8,7 +8,7 @@ public class Transaction {
         this.balanceChange = balanceChange;
         this.date = date;
 
-        AccountHandler.addTransactionToLog(this);
+        AccountHandler.applyTransactionToAccount(this, account);
     }
 
     public Date getDate() {
@@ -21,5 +21,9 @@ public class Transaction {
 
     public Account getAccount() {
         return account;
+    }
+
+    public String toString() {
+        return "Transaction Account: " + account + " - balance change: " + balanceChange + " - date: " + date;
     }
 }
