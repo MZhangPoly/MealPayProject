@@ -17,6 +17,10 @@ public class Account {
         balance += change;
     }
 
+    public void deposit(double deposit) {
+        balance += deposit;
+    }
+
     public int getId() {
         return id;
     }
