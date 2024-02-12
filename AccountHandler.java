@@ -3,11 +3,6 @@ import java.util.*;
 public class AccountHandler {
     //display all transactions on a given date
     private static ArrayList<Account> accounts = new ArrayList<Account>();
-    private static ArrayList<Transaction> transactions = new ArrayList<Transaction>();
-
-    public static void addTransactionToLog(Transaction transaction) {
-        transactions.add(transaction);
-    }
 
     public static String displayAllAccounts() {
         String str = "";
@@ -39,14 +34,16 @@ public class AccountHandler {
     public static ArrayList<Transaction> getAllTransactionsOnDate(Date date) {
         ArrayList<Transaction> t = new ArrayList<Transaction>();
 
-        for (Transaction transaction : transactions)
-            if (Arrays.equals(transaction.getDate().getDateArray(), date.getDateArray()))
-                t.add(transaction);
+        for (Account account : accounts)
+            for (Transaction transaction : account.getTransations())
+                if (Arrays.equals(transaction.getDate().getDateArray(), date.getDateArray()))
+                    t.add(transaction);
 
         return t;
     }
 
-    public void applyTransactionToAccount(Transaction transaction, Account account) {
+    public static void applyTransactionToAccount(Transaction transaction, Account account) {
         account.changeBalance(transaction.getBalanceChange());
+        account.addTransactionToLog(transaction);
     }
 }
