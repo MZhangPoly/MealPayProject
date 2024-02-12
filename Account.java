@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Account {
     private String name;
@@ -48,6 +48,6 @@ public class Account {
     }
 
     public String toString() {
-        return "Account name: " + name + " - balance: " + balance + " - unique id: " + id;
+        return "Account name: " + name + " - balance: " + balance + " - unique id: " + id + " - transactions: \n" + Arrays.deepToString(transactions.toArray());
     }
 }
