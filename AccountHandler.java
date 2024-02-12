@@ -4,6 +4,10 @@ public class AccountHandler {
     //display all transactions on a given date
     private static ArrayList<Account> accounts = new ArrayList<Account>();
 
+    public static void addAccount(Account account) {
+        accounts.add(account);
+    }
+
     public static String displayAllAccounts() {
         String str = "";
 

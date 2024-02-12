@@ -17,6 +17,8 @@ public class Account {
         accountsCreated++;
 
         transactions = new ArrayList<Transaction>();
+
+        AccountHandler.addAccount(this);
     }
 
     public void addTransactionToLog(Transaction transaction) {
