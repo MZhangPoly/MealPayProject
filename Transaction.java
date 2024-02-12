@@ -24,6 +24,6 @@ public class Transaction {
     }
 
     public String toString() {
-        return "Transaction Account: " + account + " - balance change: " + balanceChange + " - date: " + date;
+        return "Transaction || Account: " + account.getName() + " - balance change: " + balanceChange + " - date: " + date;
     }
 }
