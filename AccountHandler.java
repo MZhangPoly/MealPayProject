@@ -1,13 +1,15 @@
-public static class AccountHandler {
-    //display all transactions on a given date
-    private ArrayList<Account> accounts = new ArrayList<Account>();
-    private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+import java.util.*;
 
-    public void addTransactionToLog(Transaction transaction) {
+public class AccountHandler {
+    //display all transactions on a given date
+    private static ArrayList<Account> accounts = new ArrayList<Account>();
+    private static ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+
+    public static void addTransactionToLog(Transaction transaction) {
         transactions.add(transaction);
     }
 
-    public String displayAllAccounts() {
+    public static String displayAllAccounts() {
         String str = "";
 
         for (Account account : accounts)
@@ -16,30 +18,29 @@ public static class AccountHandler {
         return str;
     }
 
-    public String displayAllNegativeAccounts() {
+    public static String displayAllNegativeAccounts() {
         String str = "";
 
         for (Account account : accounts) 
-            if (account.getBalance < 0)
+            if (account.getBalance() < 0)
                 str += account + "\n";
         
         return str;
     }
 
-    public String getAccountFromId(int id) {
+    public static String getAccountFromId(int id) {
         for (Account account : accounts)
-            if (account.getId == id)
+            if (account.getId() == id)
                 return account.toString();
-            else
-                return "No account found!";
-
+        
+        return "No account found!";
     }   
 
-    public ArrayList<Transaction> getAllTransactionsOnDate(Date date) {
+    public static ArrayList<Transaction> getAllTransactionsOnDate(Date date) {
         ArrayList<Transaction> t = new ArrayList<Transaction>();
 
         for (Transaction transaction : transactions)
-            if (Arrays.Equals(transaction.getDate().getDateArray(), date.getDateArray()))
+            if (Arrays.equals(transaction.getDate().getDateArray(), date.getDateArray()))
                 t.add(transaction);
 
         return t;
