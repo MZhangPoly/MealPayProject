@@ -50,6 +50,15 @@ public class Account {
     }
 
     public String toString() {
-        return "Account name: " + name + " - balance: " + balance + " - unique id: " + id + " - transactions: \n" + Arrays.deepToString(transactions.toArray());
+        return "Account name: " + name + " - balance: " + balance + " - unique id: " + id + " - transactions: \n" + allTransactionsToString(transactions);
+    }
+
+    private String allTransactionsToString(ArrayList<Transaction> transactions) {
+        String str = "";
+
+        for (Transaction transaction : transactions)
+            str += transaction + "\n";
+
+        return str;
     }
 }
