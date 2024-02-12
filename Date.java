@@ -12,4 +12,8 @@ public class Date {
     public int[] getDateArray() {
         return new int[] {year, month, day};
     }
+
+    public String toString() {
+        return month + "/" + day + "/" + year;
+    }
 }
